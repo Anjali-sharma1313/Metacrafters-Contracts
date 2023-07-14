@@ -1,48 +1,43 @@
-// create a variable to hold your NFT's
-const PepeNFTs = [];
+// Initialize an empty array to store NFTs
+const pepeNFTs = [];
 
-// this function will take in some values as parameters, create an
-// NFT object using the parameters passed to it for its metadata, 
-// and store it in the variable above.
-function mintNFT (_name, _color, _shirtColor, _hairColor) {
-    const PEPE = {
-        "id": PepeNFTs.length+1,
-        "name": _name,
-        "color": _color,
-        "shirtColor": _shirtColor,
-        "hairColor": _hairColor
+// This function creates an NFT object using the provided parameters as metadata and stores it in the above array.
+function mintNFT(name, primaryColor, shirtColor, hairColor) {
+    const pepe = {
+        id: pepeNFTs.length + 1,
+        name: name,
+        color: primaryColor,
+        shirtColor: shirtColor,
+        hairColor: hairColor
     };
 
-    PepeNFTs.push(PEPE);
-    console.log("Successfully Minted:", _name);
+    pepeNFTs.push(pepe);
+    console.log("Successfully Minted:", name);
 }
 
-// create a "loop" that will go through an "array" of NFT's
-// and print their metadata with console.log()
-function listNFTs () {
-    for(let i=0; i<PepeNFTs.length;i++){
-        console.log("\n")
-        console.log("ID:", PepeNFTs[i].id);
-        console.log("Name:", PepeNFTs[i].name);
-        console.log("Color:", PepeNFTs[i].color);
-        console.log("Shirt Color:", PepeNFTs[i].shirtColor);
-        console.log("Hair Color:", PepeNFTs[i].hairColor);
-        
+// This function iterates through the array of NFTs and prints their metadata using console.log()
+function listNFTs() {
+    for (let i = 0; i < pepeNFTs.length; i++) {
+        console.log("\n");
+        console.log("ID:", pepeNFTs[i].id);
+        console.log("Name:", pepeNFTs[i].name);
+        console.log("Color:", pepeNFTs[i].color);
+        console.log("Shirt Color:", pepeNFTs[i].shirtColor);
+        console.log("Hair Color:", pepeNFTs[i].hairColor);
     }
 }
 
-// print the total number of NFTs we have minted to the console
+// This function prints the total number of minted NFTs to the console
 function getTotalSupply() {
-    console.log("Total Supply:", PepeNFTs.length);
+    console.log("Total Supply:", pepeNFTs.length);
 }
 
-// call your functions below this line
+// Call the functions below this line
 
-mintNFT("James","Green","Blue","Black");
-mintNFT("Tim","Maroon","Black","Brown");
-mintNFT("Mark","Blue","Gray","Green");
-mintNFT("Kim","Green","Pink","Pink");
+mintNFT("James", "Green", "Blue", "Black");
+mintNFT("Tim", "Maroon", "Black", "Brown");
+mintNFT("Mark", "Blue", "Gray", "Green");
+mintNFT("Kim", "Green", "Pink", "Pink");
 
-getTotalSupply()
-listNFTs()
-
+getTotalSupply();
+listNFTs();
